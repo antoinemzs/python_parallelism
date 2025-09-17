@@ -31,7 +31,7 @@ def cpu_bound_task():
         )
     )
     for i in range(1, 1_000_000):
-        float(str(i + i / 24))  # compute very hard (૭｡•̀ᵕ•́｡)૭
+        float(str(i + i / 24.0))  # compute very hard (૭｡•̀ᵕ•́｡)૭
     print(
         "In process {}, thread {}: {}".format(
             multiprocessing.current_process().name,
