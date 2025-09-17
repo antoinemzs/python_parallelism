@@ -1,3 +1,4 @@
+import logging
 import threading
 import time
 
@@ -34,4 +35,4 @@ def run_in_threads(target, use_lock: bool = False, num_threads: int = 1):
         t.join()
     end = time.time()
 
-    print("Time taken in seconds:", end - start)
+    logging.info("Time taken in seconds: {}".format(end - start))

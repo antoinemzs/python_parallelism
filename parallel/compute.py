@@ -1,10 +1,11 @@
+import logging
 import multiprocessing
 import threading
 import time
 
 
 def io_bound_task():
-    print(
+    logging.info(
         "In process {}, thread {}: {}".format(
             multiprocessing.current_process().name,
             threading.current_thread().name,
@@ -13,7 +14,7 @@ def io_bound_task():
     )
     for i in range(1, 10):
         time.sleep(1)  # wait for io q｡-ᆺ-｡p <(Zzz)
-    print(
+    logging.info(
         "In process {}, thread {}: {}".format(
             multiprocessing.current_process().name,
             threading.current_thread().name,
@@ -23,7 +24,7 @@ def io_bound_task():
 
 
 def cpu_bound_task():
-    print(
+    logging.info(
         "In process {}, thread {}: {}".format(
             multiprocessing.current_process().name,
             threading.current_thread().name,
@@ -32,7 +33,7 @@ def cpu_bound_task():
     )
     for i in range(1, 1_000_000):
         float(str(i + i / 24.0))  # compute very hard (૭｡•̀ᵕ•́｡)૭
-    print(
+    logging.info(
         "In process {}, thread {}: {}".format(
             multiprocessing.current_process().name,
             threading.current_thread().name,

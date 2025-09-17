@@ -1,4 +1,5 @@
 import asyncio
+import logging
 import time
 
 from parallel.asyncio.compute import lock_before_running
@@ -18,4 +19,4 @@ async def run_async(target, use_lock: bool = False, num_tasks: int = 10):
     await asyncio.gather(*tasks)
     end = time.time()
 
-    print("Time taken in seconds:", end - start)
+    logging.info("Time taken in seconds: {}".format(end - start))
