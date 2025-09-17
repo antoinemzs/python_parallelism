@@ -1,9 +1,9 @@
-from parallel.compute import cpu_bound_task
+from parallel.compute import io_bound_task
 from parallel.multiprocessing.run import run_in_processes
 
 
 def main():
-    run_in_processes(cpu_bound_task, 10)
+    run_in_processes(io_bound_task, num_processes=2, use_lock=True)
 
 
 if __name__ == "__main__":

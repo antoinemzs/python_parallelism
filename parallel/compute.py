@@ -40,6 +40,7 @@ def cpu_bound_task():
         )
     )
 
+
 def lock_before_running(lock, target):
     with lock:
         target()

@@ -3,7 +3,7 @@ from parallel.multiprocessing.run import run_in_processes
 
 
 def main():
-    run_in_processes(io_bound_task, 10)
+    run_in_processes(io_bound_task, num_processes=10, use_lock=False)
 
 
 if __name__ == "__main__":
